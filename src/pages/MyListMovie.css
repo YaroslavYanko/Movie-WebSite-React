@@ -1,0 +1,13 @@
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  cursor: pointer;
+  width: 150px;
+}
+.movieList {
+  margin-top: 50px;
+}
