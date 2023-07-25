@@ -9,7 +9,7 @@ import "./popular.css";
 
 function Popular() {
   const imagePath = "https://image.tmdb.org/t/p/w500";
-  //const apiKey = '9c1059867e4c0dbc6542a529b5a52aa8'
+  const apiKey = '9c1059867e4c0dbc6542a529b5a52aa8'
   const nameMovie = document.querySelectorAll(".block_name_movie");
 
   const [popular, setPopular] = useState([]);
@@ -22,7 +22,7 @@ function Popular() {
     //console.log(process.env.REACT_APP_MOVIE_API_KEY)
     try {
       const res = await fetch(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_MOVIE_KEY}&include_adult=false`
+        `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&include_adult=false`
       );
       const data = await res.json();
 
