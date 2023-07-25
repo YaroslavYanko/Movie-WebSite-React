@@ -17,7 +17,11 @@ const PageMovie = () => {
 
   const [movie, setMovie] = useState([]);
 
-  let storeMovie = movieList.find((o) => o.id === +idMovie.id);
+  let storedMovies = localStorage.getItem("movies");
+
+  let idArray = storedMovies ? storedMovies.split(",") : [];
+
+  let storeMovie = idArray.find((id) => +id === +idMovie.id);
 
   let btnDisabled = storeMovie ? true : false;
 
@@ -121,7 +125,10 @@ const PageMovie = () => {
                 {movie.production_companies?infoMovie(movie.production_companies):''}
               </li>
             </ul>
-            {btnDisabled ? (
+          
+          </div>
+
+          {btnDisabled ? (
               <button
                 onClick={() => removeMovieFromWatchList(movie)}
                 className="btn removeList"
@@ -136,7 +143,6 @@ const PageMovie = () => {
                 Add to list
               </button>
             )}
-          </div>
         </div>
       </div>
       <div className="movie_overview">

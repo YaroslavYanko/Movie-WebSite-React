@@ -5,6 +5,8 @@
 }
 .list_containar>ul{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .list_containar>ul>a>li{
     margin-left: 30px;
